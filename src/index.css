@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/magic-retro");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Montserrat";
+  scroll-behavior: smooth;
+  transition: all 0.35s ease;
+}
+
+.fontMain {
+  font-family: "Magic Retro";
+}
+.headerBg {
+  background: url("../src/assets/images/header_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.gradientBtn {
+  background: linear-gradient(45deg, #3e8e39, #c8dd68);
+}

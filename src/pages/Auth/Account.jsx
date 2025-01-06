@@ -8,7 +8,7 @@ export default function Account({ showAccount, setShowAccount }) {
   return (
     <>
       <section
-        className={`fixed top-24 shadow-sm right-10 z-10 bg-white  rounded-lg w-[450px]  ${
+        className={`fixed top-24 shadow-sm right-10 z-[1000] bg-white  rounded-lg w-[450px]  ${
           showAccount ? "max-h-full" : "max-h-0"
         } overflow-hidden transition-all`}
       >

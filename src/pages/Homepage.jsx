@@ -32,35 +32,14 @@ export default function Homepage() {
         </main>
       </section>
 
-      <section className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] grid-flow-dense justify-center gap-5 lg:gap-10 lg:py-20 lg:px-32 p-6">
-        <main className="border h-[250px]">
-          <img
-            src={apple_banner}
-            className="w-full h-full object-cover object-center"
-            alt="apple_banner"
-          />
-        </main>
-        <main className="border h-[250px]">
-          <img
-            src={banana_banner}
-            className="w-full h-full object-cover object-center"
-            alt="banana_banner"
-          />
-        </main>
-        <main className="border h-[250px]">
-          <img
-            src={onions_banner}
-            className="w-full h-full object-cover object-center"
-            alt="onipns_banner"
-          />
-        </main>
-        <main className="border h-[250px]">
-          <img
-            src={tomato_banner}
-            className="w-full h-full object-cover object-center"
-            alt="tomato_banner"
-          />
-        </main>
+      <section className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] grid-flow-dense justify-center gap-5 lg:gap-10 lg:py-20 lg:px-32 p-6">
+        <img src={apple_banner} alt="apple_banner" />
+
+        <img src={banana_banner} alt="banana_banner" />
+
+        <img src={onions_banner} alt="onipns_banner" />
+
+        <img src={tomato_banner} alt="tomato_banner" />
       </section>
     </>
   );

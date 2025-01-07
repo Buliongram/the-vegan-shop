@@ -1,77 +1,75 @@
-import React, { useEffect, useState } from "react";
-import { logo } from "../assets/images/images";
-import { BsSearch } from "react-icons/bs";
-import { IoIosHeartEmpty } from "react-icons/io";
+import React from "react";
+import { Link } from "react-router-dom";
+import { logo_green } from "../assets/images/images";
+import { CiHeart, CiSearch } from "react-icons/ci";
+import { FaOpencart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { LiaBarsSolid, LiaShoppingBagSolid } from "react-icons/lia";
-import { PiUserCircleLight } from "react-icons/pi";
-import Account from "../pages/Auth/Account";
-
 export default function Header() {
-  const [count, setCount] = useState(0);
-
-  const [showAccount, setShowAccount] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
-      <header className="  lg:px-16 px-6 relative z-10 headerBg flex items-center justify-between p-2 text-white lg:mx-20 mx-5 mt-5 ">
-        <div className="flex items-center gap-3">
-          <div className="border  rounded-md h-9 w-10 border-white hidden lg:flex items-center justify-center">
-            <RxHamburgerMenu className="text-xl" />
-            {/* {count} */}
+      <header className="fixed top-0 w-full left-0 bg-white flex flex-col p-4 px-6 gap-4  lg:px-28">
+        <nav className="flex justify-between items-center border-b pb-4  ">
+          <div className="flex items-center gap-3">
+            <div className="border   rounded-md h-9 w-9 flex lg:hidden items-center justify-center">
+              <RxHamburgerMenu className="text-xl" />
+            </div>
+            <img
+              src={logo_green}
+              alt="logo"
+              className="w-[100px] lg:w-[120px]"
+            />
           </div>
-          <img src={logo} width={100} alt="logo" />
+
+          <section className="hidden lg:flex items-center border shadow-sm overflow-hidden rounded-full p-1 w-[400px] gap-3">
+            <input
+              type="text"
+              placeholder="Type to Search"
+              className="p-1.5 px-4 outline-none w-full text-sm placeholder:text-xs placeholder:text-gray-500 placeholder:font-normal bg-transparent"
+            />
+            <button
+              className="text-xs bg-main text-white rounded-full px-7 py-2.5
+            "
+            >
+              SEARCH
+            </button>
+          </section>
+
+          <section className="flex items-center gap-4">
+            <CiHeart className="text-2xl cursor-pointer" />
+            <div className="h-[25px] w-[1.5px] bg-black"> </div>
+            <div className="relative">
+              <span className="text-white rounded-full h-4 min-w-4 flex items-center justify-center text-xs absolute -right-1 -top-2  font-medium bg-red-500">
+                5
+              </span>
+              <FaOpencart className="text-2xl" />
+            </div>
+            <div className="hidden lg:flex flex-col gap-1 text-xs font-semibold">
+              <span className="text-gray-500">Shopping Cart</span>
+              <span className="text-main">$0.00</span>
+            </div>
+          </section>
+        </nav>
+
+        <div className="hidden lg:flex items-center justify-center gap-8 text-[13px] font-semibold">
+          <Link>HOME</Link>
+          <Link>ABOUT US</Link>
+          <Link>PRODUCTS</Link>
+          <Link>CONTACT US</Link>
         </div>
-
-        <form
-          action=""
-          className="hidden lg:flex items-center gap-4 rounded-lg border-2 border-main pr-5 w-[350px]"
-        >
+        <section className="flex lg:hidden items-center border shadow-sm overflow-hidden rounded-full p-1 w-full gap-3">
           <input
-            type="search"
-            placeholder="Search the Vegan shop"
-            className="outline-none p-2 placeholder:text-xs px-5 rounded-lg bg-transparent text-white placeholder:text-white w-full "
+            type="text"
+            placeholder="Type to Search"
+            className="p-1.5 px-4 outline-none w-full text-sm placeholder:text-xs placeholder:text-gray-500 placeholder:font-normal bg-transparent"
           />
-          <BsSearch />
-        </form>
-
-        <section className="flex items-center gap-2 ">
-          <IoIosHeartEmpty className="text-2xl hidden lg:flex" />
-          <span
-            onClick={() => setShowAccount(!showAccount)}
-            className=" h-7 w-7 border cursor-pointer lg:hidden rounded-full text-white flex items-center justify-center"
-          >
-            <PiUserCircleLight className="text-4xl" />
-          </span>
-          <div className="h-7 w-7 lg:h-12 lg:w-12 rounded-full flex items-center justify-center relative shrink-0 lg:bg-white/20">
-            <span className="text-white rounded-full h-5 min-w-5 flex items-center justify-center text-xs absolute -right-1 -top-2 lg:top-0 font-semibold bg-gradient-to-t from-main to-secondary">
-              5
-            </span>
-            <LiaShoppingBagSolid className="text-6xl lg:text-3xl" />
-          </div>
           <button
-            onClick={() => setShowAccount(!showAccount)}
-            className="text-sm hidden lg:flex font-medium bg-gradient-to-t from-main to-secondary text-white px-6 py-1.5 rounded-lg"
+            className="text-xs bg-main text-white shrink-0 h-8 flex items-center justify-center w-8 rounded-full
+            "
           >
-            Login
+            <CiSearch className="text-xl" />
           </button>
-          <div className="h-8  w-8  rounded-md border flex items-center justify-center cursor-pointer">
-            <LiaBarsSolid />
-          </div>
         </section>
       </header>
-      <Account
-        showAccount={showAccount}
-        setShowAccount={() => setShowAccount(false)}
-      />
     </>
   );
 }

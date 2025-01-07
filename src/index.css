@@ -13,9 +13,8 @@
 .fontMain {
   font-family: "Magic Retro";
 }
-.headerBg {
-  background: url("../src/assets/images/header_bg.png");
-  background-repeat: no-repeat;
+.hero {
+  background: url("../src/assets/images/hero.jpg");
   background-size: cover;
   background-position: center;
 }

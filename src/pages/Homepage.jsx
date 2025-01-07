@@ -1,5 +1,11 @@
 import React from "react";
-import { hero } from "../assets/images/images";
+import {
+  apple_banner,
+  banana_banner,
+  hero,
+  onions_banner,
+  tomato_banner,
+} from "../assets/images/images";
 import Account from "./Auth/Account";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
@@ -8,9 +14,9 @@ export default function Homepage() {
   return (
     <>
       <section className="hero mt-36 h-[400px] border">
-        <section className="flex flex-col gap-5 mt-6 lg:mt-0  relative z-10 p-6 lg:p-20 font-semibold">
-          <span className=" tracking-wide text-5xl lg:text-7xl font-black">
-            100% <span className="text-primary">Organic</span>
+        <main className="flex flex-col gap-5 px-6 lg:px-20  py-12 font-semibold">
+          <span className=" tracking-wide text-5xl lg:text-7xl font-semibold">
+            100% <span className="text-main">Organic</span>
           </span>
           <span className="text-white w-max bg-main p-1 px-5 text-[16px] lg:text-xl">
             Fresh & Natural Farm Food
@@ -20,10 +26,41 @@ export default function Homepage() {
             and packed with wholesome goodness!
           </span>
 
-          <Link className="text-xs lg:text-sm font-medium text-main border border-main w-max px-6 py-3 rounded-full flex items-center gap-2">
+          <Link className="text-xs lg:text-[13px] font-medium text-main border-[1.5px] border-main w-max px-8 py-3 rounded-full flex items-center gap-2">
             <span>VIEW PRODUCTS</span> <BsArrowRight />
           </Link>
-        </section>
+        </main>
+      </section>
+
+      <section className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] grid-flow-dense justify-center gap-5 lg:gap-10 lg:py-20 lg:px-32 p-6">
+        <main className="border h-[250px]">
+          <img
+            src={apple_banner}
+            className="w-full h-full object-cover object-center"
+            alt="apple_banner"
+          />
+        </main>
+        <main className="border h-[250px]">
+          <img
+            src={banana_banner}
+            className="w-full h-full object-cover object-center"
+            alt="banana_banner"
+          />
+        </main>
+        <main className="border h-[250px]">
+          <img
+            src={onions_banner}
+            className="w-full h-full object-cover object-center"
+            alt="onipns_banner"
+          />
+        </main>
+        <main className="border h-[250px]">
+          <img
+            src={tomato_banner}
+            className="w-full h-full object-cover object-center"
+            alt="tomato_banner"
+          />
+        </main>
       </section>
     </>
   );
